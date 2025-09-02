@@ -7,11 +7,11 @@ from cinema.views import (
 )
 
 
-bus_list = CinemaHallViewSet.as_view({
+cinema_hall_list = CinemaHallViewSet.as_view({
     "get": "list",
     "post": "create",
 })
-bus_detail = CinemaHallViewSet.as_view({
+cinema_hall_detail = CinemaHallViewSet.as_view({
     "get": "retrieve",
     "put": "update",
     "patch": "partial_update",
