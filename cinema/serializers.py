@@ -4,9 +4,12 @@ from cinema.models import Movie, Actor, Genre, CinemaHall
 
 
 class MovieSerializer(serializers.ModelSerializer):
+    actors = serializers.PrimaryKeyRelatedField(many=True, queryset=Actor.objects.all())
+    genres = serializers.PrimaryKeyRelatedField(many=True, queryset=Genre.objects.all())
+
     class Meta:
         model = Movie
-        fields = ["title", "description", "duration"]
+        fields = ["title", "description", "duration", "actors", "genres"]
 
 
 class ActorSerializer(serializers.ModelSerializer):
